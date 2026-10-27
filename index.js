@@ -465,23 +465,22 @@ async function generateReplyViaSarvam(messages) {
 // from the text-chat RAG system prompt below, so text chat is unaffected.
 const VOICE_COMPANY_INFO = `
 
-Recognized by DPIIT (Startup India) for innovative B2C solutions. Industry Associate Partner of NPTEL. Meta Ads Partner Excellence Impact Leader. 20,000+ students trained so far. 500+ placement clients overall, 50+ currently active placement partners. Ratings: Google 4.8/5 with 2,500+ reviews (Google Reviews link: https://tinyurl.com/reviews-appin). Facebook 5/5. Justdial 4.8/5 with 2,300 reviews. Ex-Accenture mentorship for live projects. Students work on real AI projects, not just theory. Located in Ram Nagar nead Gandhipuram, Coimbatore, easy to reach. Hostel facilities available for boys and girls near the location. Office timing: 9:30 AM to 6:30 PM.
-Team Mr. Mohan Natarajan MD, Digital Marketing Trainer, Ms. Kanimozhi handling Full Stack Python, React Js, Gen AI, Data Analytics, Data Science. Mr. Dinesh Rao Website Developer, WordPress Trainer. Ms. Dhivya Java Trainer. Ms. Shindu Priya Business Development, Ms. Moogambigai Senior HR Executive, Mr. Sharan Project Engineer, Mr. Rajesh Kumar Operations Lead, Mr. Narasimman and Athirupan Advisor, Mr. Mustafa Consultant. 
-All Courses Fee range from Rs 9,899 to Rs 59,899, depending on duration and modules. EMI option is available — confirm exact plan with a counselor. After paying, the student should send a screenshot with Name, Mobile Number, and Course Registered to mohan@appincoimbatore.com or their career advisor. The team will call to confirm the payment. Appin provides Placement Assistance — this is NOT a Placement Guarantee. Always be upfront about this. Registration/advance amount Rs 2000 for 2 hrs course and Rs 5000 for 8 hrs per day course - inclusive of Total Course fees. 2 installments for 2 hrs per day course and 3 installments for 8 hrs per day course. Refund or cancellation policy
-Dedicated placement team providing soft-skill classes, interview preparation, and interview opportunities for eligible students. Fresher/entry-level IT salary in Coimbatore: Rs 15,000 to Rs 30,000 per month. Salaries are typically higher in Chennai and Bangalore, and Appin also supports placements in those cities. A recognized certification matters: courses learned only through YouTube or free e-learning are usually not considered as strong by employers, since there's no verified project or practical experience behind them. Live job openings board: placement.appincoimbatore.com Recently placed students include those placed at: Studiosoft Solutions Pvt Ltd, Ether Services, ApplogiQ, Violet Infotech, Techno Punks Incorporation, YS Innovation, Qiaben, Avanexa Technologies, and AIC RAISE. 50+ active placement partner companies including KGISL, Mahindra Rise (Mahindra & Mahindra), Webnox Technologies, iamneo Edutech, Applied Data Finance, Kambaa Inc., iCore Software Technologies, Bambus Technologies, Genocus Technologies, PSG Software Technologies, and more (full list available on request). 80% Placement success rate for certified students
-How to Apply Interested candidates can send their latest updated resume to: Email: hr@appincoimbatore.com
+Gateway Software Solutions is an IT services and software development company providing software development, web development, mobile application development, digital marketing, and technology solutions. The company website highlights 1,200+ clients, 20+ products, 50+ team members, and 17 lakh+ leads generated. Technical training and internship-related opportunities are available across various IT domains; contact the company to confirm current courses, course durations, and available modules. Training areas to enquire about include Python, Java, Full-Stack Development, React.js, Web Development, Data Science, Data Analytics, Artificial Intelligence, Machine Learning, Cloud Computing, Software Testing, Networking, Cybersecurity, IoT, and .NET Technologies. For company leadership and team information, refer to the official team directory. 
+Course fees depend on the selected program, duration, and training modules. Contact the company for the latest fee structure, available EMI options, registration charges, and installment plans. Before enrolling, request the complete refund and cancellation policy. After making a course payment, students should send a screenshot of the payment along with their Name, Mobile Number, and Course Registered to sabari@gatewaysoftwaresolutions.com or share the details with their assigned career advisor. The team will contact the student to confirm the payment. Students should retain their payment receipt and written confirmation of the course fees and payment schedule.
+Gateway Software Solutions provides technology services and technical training opportunities. Students should confirm whether their selected program includes hands-on exercises, practical projects, live client projects, technical mentoring, internship opportunities, and project completion certificates. The company’s current placement assistance services and eligibility criteria should be confirmed directly. Placement support may include resume preparation, soft-skills training, interview preparation, and interview opportunities for eligible candidates, subject to the services currently offered. Placement Assistance is NOT a Placement Guarantee. Students should verify placement terms, participating employers, and recent placement outcomes before enrolling. Entry-level IT salaries vary according to technical skills, job role, employer, and location. Candidates interested in opportunities in Coimbatore, Chennai, Bengaluru, and other technology hubs should confirm the current placement locations and hiring opportunities with the company. Technical certifications, practical project experience, and demonstrable skills can strengthen a candidate’s profile. 80% Placement success rate for certified students
+How to Apply Interested candidates can send their latest updated resume to: Email: gateway.hrkowsalya@gmail.com
 
-Support contact: mohan@appincoimbatore.com
+Support contact: sabari@gatewaysoftwaresolutions.com
 `;
 
 function buildVoiceSystemPrompt(course) {
   return `
-You are Minmini, the friendly and persuasive AI course counselor for Appin Technology, Coimbatore, replying to a WhatsApp voice note.
+You are Minmini, the friendly and persuasive AI course counselor for Gateway Software Solutions, Coimbatore, replying to a WhatsApp voice note.
 
-🎯 Goal: Inform, motivate, and convert inquiries into course enrollments for Appin Technology.
+🎯 Goal: Inform, motivate, and convert inquiries into course enrollments for Gateway Software Solutions.
 
 🧭 Guidelines:
-1. Never reveal you are an AI model. Always respond as "we" when referring to Appin Technology.
+1. Never reveal you are an AI model. Always respond as "we" when referring to Gateway Software Solutions
 2. Reply primarily in natural spoken Tamil, keeping English/technical words (course names, "Python", "React", "placement", etc.) in English — the same Tanglish style the caller uses. Do not reply only in English.
 3. This reply is read aloud by text-to-speech: plain spoken sentences only — NO markdown, NO bullet points, NO numbered lists, NO emojis, NO asterisks, NO links.
 4. Maximum 2-3 short sentences. Never a long paragraph.
@@ -833,7 +832,7 @@ if (msg?.referral) {
 
       broadcast({ type: "new_user", user: userChat });
 
-      await sendMessage(from, `Hi ${userName}, Thanks for choosing Appin Technology`);
+      await sendMessage(from, `Hi ${userName}, Thanks for choosing Gateway Software Solutions`);
       // await sendInitialTwoButtons(from);
       await sendBranchSelectionButtons(from);
       return res.sendStatus(200);
@@ -1028,20 +1027,20 @@ if (
         {
           role: "system",
           content: `
-You are Minmini, the friendly and persuasive AI course counselor for Appin Technology, Coimbatore.
+You are Minmini, the friendly and persuasive AI course counselor for Gateway Software Solutions, Coimbatore.
 
 🎯 Primary Goal:
-Inform, motivate, and convert inquiries into course enrollments for Appin Technology.
+Inform, motivate, and convert inquiries into course enrollments for Gateway Software Solutions.
 
 🧭 Guidelines:
 1. Never reveal you are an AI model.
-2. Always respond as “we” when referring to Appin Technology.
+2. Always respond as “we” when referring to Gateway Software Solutions.
 3. Keep replies concise, warm, and professional.
-4. Focus only on Appin Technology and its offerings.
+4. Focus only on Gateway Software Solutions and its offerings.
 5. Personalize answers based on the user’s selected course: ${userChat.course}
 6. Use the company details below for responses
 7. When users greet (Hi, Hello, Hey, etc.), respond with:
-   > 👋 Hello! I’m Minmini, your AI counselor from Appin Technology, Coimbatore. How can I help you today? or some positive words
+   > 👋 Hello! I’m Minmini, your AI counselor from Gateway Software Solutions, Coimbatore. How can I help you today? or some positive words
    ⚠️ Important: Introduce yourself **only** when the user’s message is a greeting or introduction. 
    Do **not** reintroduce yourself in follow-up messages, replies, or ongoing conversation.
 8. When users ask questions or show interest, combine these roles naturally:
@@ -1056,7 +1055,7 @@ Inform, motivate, and convert inquiries into course enrollments for Appin Techno
    - Use bullet points or numbered lists wherever applicable (e.g., features, benefits, steps, next actions).
    - Always sound friendly but avoid unnecessary repetition.
 10. When user asked about syllabus , location , enrollment or demo - include links in response
-11. If you are unsure or lack verified information, do not hallucinate—respond that you’re not certain and advise contacting the support team at +91 99446 44905 Email: mohan@appincoimbatore.com
+11. If you are unsure or lack verified information, do not hallucinate—respond that you’re not certain and advise contacting the support team at +91 99446 44905 Email: sabari@gatewaysoftwaresolutions.com
 12. Do NOT ask for enrollment, registration, or joining in early replies.
 13. Follow the "Gather Information step by step" order strictly.
 14. Ask only ONE next-step question at a time, based on what is not yet covered.
@@ -1079,7 +1078,7 @@ Gather Information step by step (strict order):
 6) Ask for demo class or any other queries 
 
 ✨ Tone:
-Friendly, encouraging, and confident — always focused on guiding the user toward learning and success with Appin Technology.
+Friendly, encouraging, and confident — always focused on guiding the user toward learning and success with Gateway Software Solutions.
 
 company info : ${new_content.join("\n")}
 `,
@@ -1307,7 +1306,7 @@ app.post('/api/website', async (req, res) => {
     broadcast({ type: "new_user", user: userChat });
 
     // ✅ 7. Add an initial conversation
-    const followUp = `Hi ${First || "there"}! 👋 Thanks for showing interest in Appin Technology. We’re excited to have you on board and can’t wait to help you kickstart your learning journey! 🚀`;
+    const followUp = `Hi ${First || "there"}! 👋 Thanks for showing interest in Gateway Software Solutions. We’re excited to have you on board and can’t wait to help you kickstart your learning journey! 🚀`;
 
     // await sendDynamicMessage(fullNumber,followUp)
     await sendfixedtemplate2(fullNumber)
@@ -1406,7 +1405,7 @@ app.post('/api/enquiry', async (req, res) => {
     broadcast({ type: "new_user", user: userChat });
 
     // ✅ 7. Add an initial conversation
-    const followUp = `Hi ${userName || "there"}! 👋 Thanks for showing interest in Appin Technology. We’re excited to have you on board and can’t wait to help you kickstart your learning journey! 🚀`;
+    const followUp = `Hi ${userName || "there"}! 👋 Thanks for showing interest in Gateway Software Solutions. We’re excited to have you on board and can’t wait to help you kickstart your learning journey! 🚀`;
 
     // await sendDynamicMessage(fullNumber,followUp)
     await sendfixedtemplate2(fullNumber)
@@ -1467,7 +1466,7 @@ app.post("/ads/couns1",async (req,res)=>{
     broadcast({ type: "new_user", user: userChat });
 
     // ✅ 7. Add an initial conversation
-    const followUp = `Hi ${userName || "there"}! 👋 Thanks for showing interest in Appin Technology. We’re excited to have you on board and can’t wait to help you kickstart your learning journey! 🚀`;
+    const followUp = `Hi ${userName || "there"}! 👋 Thanks for showing interest in Gateway Software Solutions. We’re excited to have you on board and can’t wait to help you kickstart your learning journey! 🚀`;
 
     // await sendDynamicMessage(fullNumber,followUp)
     // await sendfixedtemplate2(fullNumber)
@@ -1752,7 +1751,7 @@ const location = `${details["city"] || "N/A"}`
     broadcast({ type: "new_user", user: userChat });
 
     // ✅ 7. Add an initial conversation
-    const followUp = `Hi ${userName || "there"}! 👋 Thanks for showing interest in Appin Technology. We’re excited to have you on board and can’t wait to help you kickstart your learning journey! 🚀`;
+    const followUp = `Hi ${userName || "there"}! 👋 Thanks for showing interest in Gateway Software Solutions. We’re excited to have you on board and can’t wait to help you kickstart your learning journey! 🚀`;
 
     // await sendDynamicMessage(fullNumber,followUp)
     sendfixedtemplate2(fullNumber)
@@ -1916,7 +1915,7 @@ async function sendBranchSelectionButtons(to) {
           type: "list",
           header: { type: "text", text: "📍 Choose your branch" },
           body: {
-            text: "👋 Hello! I’m Minmini, your AI counselor from Appin Technology. Which branch are you looking to join? Please pick the one nearest to you.",
+            text: "👋 Hello! I’m Minmini, your AI counselor from Gateway Software Solutions. Which branch are you looking to join? Please pick the one nearest to you.",
           },
           footer: { text: "Pick one option" },
           action: {
@@ -1956,7 +1955,7 @@ async function sendCourseSelectionButtons(to) {
             text: "📚 Course to enquire",
           },
           body: {
-            text: "👋 Hello! I’m Minmini, your AI counselor from Appin Technology. I can guide you about our courses, placements, and career paths. All our courses include AI. Please tell me which course interests you — I’ll help you take the next step!",
+            text: "👋 Hello! I’m Minmini, your AI counselor from Gateway Software Solutions. I can guide you about our courses, placements, and career paths. All our courses include AI. Please tell me which course interests you — I’ll help you take the next step!",
           },
           footer: {
             text: "Pick one option",
@@ -2126,7 +2125,7 @@ app.post("/api/uploadExcel", async (req, res) => {
 //         to,
 //         type: "template",
 //         template: {
-//           name: "welcome_appin", // ✅ Use your approved template name
+//           name: "welcome_gateway", // ✅ Use your approved template name
 //           language: { code: "en" },
 //         },
 //       },
@@ -2546,7 +2545,7 @@ app.post("/add", async (req, res) => {
     broadcast({ type: "new_user", user: userChat });
 
     // ✅ 7. Send welcome message
-    const mockMsg = `Hi ${userName || "there"}, Welcome to Appin Technology Coimbatore! I'm Minmini, your AI assistant.`;
+    const mockMsg = `Hi ${userName || "there"}, Welcome to Gateway Software Solutions Coimbatore! I'm Minmini, your AI assistant.`;
     // await sendDynamicMessage(fullNumber, mockMsg);
 
     // ✅ 8. Respond success
@@ -2595,7 +2594,7 @@ async function generateFollowUp(userMessages, course, counsellorRemarks = []) {
   if (!course) return null;
 
 const systemPrompt = `
-You are Appin Assistant, a friendly and professional AI counselor from Appin Technology Coimbatore.
+You are Gateway Assistant, a friendly and professional AI counselor from Gateway Software Solutions Coimbatore.
 Your job is to create a short follow-up message to re-engage users and motivate them to take the next step toward joining a course.
 
 Guidelines:
@@ -2607,7 +2606,7 @@ Guidelines:
 6. Briefly mention one appealing benefit (like placement support, certification, or career growth) when appropriate.
 7. Keep it short (2–3 sentences) and conversational.
 8. If other courses are mentioned, acknowledge them but focus mainly on "${course}".
-9. Never reveal that you're an AI — say you're the Appin Assistant built by Appin developers.
+9. Never reveal that you're an AI — say you're the Gateway Assistant built by Gateway developers.
 10. If counsellor remarks are provided below, they capture concerns, objections, or hesitations the lead raised during calls — directly and empathetically address those specific issues in the message rather than generic phrasing.
 11. Where relevant, highlight future job opportunities and career prospects tied to "${course}" to help convert the lead.
 `;
@@ -2634,7 +2633,7 @@ const DAY4_FOLLOWUP_TOPICS = [
   "benefits of the course they selected",
   "job opportunities after the course selected",
   "course value related to job",
-  "about appincoimbatore.com",
+  "about gatewaysoftwaresolutions.com",
   "how we are better than competitors",
   "infographics and statistics of the course (share as a link)",
   "scope of the course in the long term",
@@ -2659,7 +2658,7 @@ async function generateDay4FollowUp(userName, course, userMessages, counsellorRe
     : "No counsellor remarks available.";
 
   const instructions = `
-You are Appin Assistant, a friendly and professional AI counselor from Appin Technology Coimbatore (https://appincoimbatore.com).
+You are Gateway Assistant, a friendly and professional AI counselor from Gateway Software Solutions Coimbatore (https://gatewaysoftwaresolutions.com).
 
 This is a 4th-day morning follow-up to a lead who has not replied to the last 3 daily follow-ups. It must NOT be generic or repeat generic encouragement - it must feel researched and specific.
 
@@ -2670,11 +2669,11 @@ Guidelines:
 1. Start with a cheerful morning greeting (this is sent around 10 AM).
 2. Ground the message in the specific, real information you found via web search (a real statistic, salary/job trend, testimonial, or fact) - do not invent statistics, testimonials, or links.
 3. If you use the "infographics and statistics" angle, include the real source URL you found for it.
-4. If you use the "about appincoimbatore.com" or "competitor" angle, base it on what you actually find about Appin Technology Coimbatore and the local training market - do not disparage named competitors, just highlight our genuine strengths.
+4. If you use the "about gatewaysoftwaresolutions.com" or "competitor" angle, base it on what you actually find about Gateway Software Solutions Coimbatore and the local training market - do not disparage named competitors, just highlight our genuine strengths.
 5. If counsellor remarks are provided, they capture concerns/objections the lead raised - address those specifically if relevant to the angle you pick.
 6. Keep the tone warm, polite, and motivating - never pushy or robotic.
 7. HARD LIMIT: the entire message must be under 500 characters (roughly 3-4 short sentences). WhatsApp will reject longer messages, so do not exceed this no matter how much you found - pick the single best fact and end with one clear next step (e.g. reply to book a free demo or ask a question).
-8. Never reveal you're an AI model - you're the Appin Assistant.
+8. Never reveal you're an AI model - you're the Gateway Assistant.
 9. Always prioritize the user's selected course of interest: "${course}".
 `;
 
@@ -2742,7 +2741,7 @@ cron.schedule("0 10 * * *", async () => {
         // await sendWhatsAppMessage(whatsappNumber, initialMessage);
         user.conversations.push({
         userMsg: `Follow-up #${user.followUpCount + 1} sent`,
-        botReply: `👋 Hello! I’m Minmini, your AI counselor from Appin Technology, Coimbatore. Say "Hi" to know more about me and courses we offer`,
+        botReply: `👋 Hello! I’m Minmini, your AI counselor from Gateway Software Solutions, Coimbatore. Say "Hi" to know more about me and courses we offer`,
       });
       } else {
         const lastMessages = user.conversations.slice(-5).map(c => c.userMsg);
@@ -3375,7 +3374,7 @@ app.post("/new/batch-assigned", async (req, res) => {
 //     📍 *Location:* {{4}}
 //     Please log in to the Workspace Portal to view the complete job details and apply.
 //     Thank you,
-//     *Appin Technology*
+//     *Gateway Software Solutions*
 async function sendJobOpportunityNotification(to, studentName, jobRole, company, location) {
   to = cleanIndianMobileNumber(to);
   const response = await axios.post(
@@ -3953,7 +3952,7 @@ app.post("/notify/addlead", async (req, res) => {
 
     console.log("Assigned User:", assignedUser.userNumber);
 
-  const notificationPayload = `Hi ${user.userName} Thanks for interest in appintech`;
+  const notificationPayload = `Hi ${user.userName} Thanks for interest in Gateway Software Solutions`;
 
     // 4️⃣ Send message to counsellor
         console.log(user.userNumber, notificationPayload)
@@ -4391,7 +4390,7 @@ Your installment of ₹${inst.amount} is due on ${inst.dueDate.toDateString()}.
 
 Kindly make the payment on or before the due date.
 
-— Appin Technology`;
+— Gateway Software Solutions`;
 
         console.log(`Sending to ${userNumber} (${daysLeft} days left)`);
 
@@ -4486,7 +4485,7 @@ cron.schedule("0 11 * * *", async () => {
 //         {
 //           role: "system",
 //           content: `
-// You are a friendly student counselor for Appin Technology.
+// You are a friendly student counselor for Gateway Software Solutions.
 
 // Your job is to guide students about:
 // - Courses (Cyber Security, Ethical Hacking, Python, AI, etc.)
@@ -5082,7 +5081,7 @@ async function sendSyllabusFollowupTemplate(to, userName, course, syllabusLink, 
 
 // placement_support
 // Hi {{1}}! 🌟
-// Students from Appin Technology, Coimbatore are now placed and building great careers.
+// Students from Gateway Software Solutions, Coimbatore are now placed and building great careers.
 // Need guidance on choosing the right batch? Our counsellor is happy to help:
 // 📞 {{2}}
 // I'm Minmini, your AI assistant — happy to answer quick questions too!
