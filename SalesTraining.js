@@ -3,7 +3,7 @@ const OpenAI = require("openai");
 const { User, Chat, SalesTrainingSession } = require("./Schema");
 
 const ACCESS_TOKEN = process.env.WHATSAPP_TOKEN;
-const PHONE_NUMBER_ID = process.env.PHONE_NUMBER_ID || "825569433970567";
+const PHONE_NUMBER_ID = process.env.PHONE_NUMBER_ID || "1418069558050095";
 const GRAPH_API = "https://graph.facebook.com/v20.0";
 
 const openai = new OpenAI({
